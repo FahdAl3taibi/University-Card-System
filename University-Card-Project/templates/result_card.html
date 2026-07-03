@@ -1,0 +1,115 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>بطاقتك الجامعية - جامعة الطائف</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        body { background-color: #f0f0f0; font-family: 'Arial', sans-serif; }
+        
+        
+        .id-card-container {
+            width: 700px;
+            height: 400px;
+            background: white;
+            margin: 40px auto;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content { padding: 30px; position: relative; flex-grow: 1; }
+
+        .logo-section { position: absolute; top: 20px; right: 20px; text-align: center; }
+        .logo-section img { width: 80px; }
+        
+        .card-title { position: absolute; top: 30px; left: 50%; transform: translateX(-50%); text-align: center; color: #333; }
+        .card-title h2 { margin: 0; font-size: 18px; }
+        .card-title p { margin: 0; font-size: 14px; color: #666; }
+
+        .student-info { margin-top: 100px; text-align: right; direction: rtl; padding-right: 40px; }
+        .info-row { display: flex; justify-content: flex-end; margin-bottom: 12px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
+        .label { color: #888; font-size: 14px; width: 120px; }
+        .value { color: #333; font-size: 16px; font-weight: bold; width: 250px; }
+
+        
+        .card-footer {
+            height: 40px;
+            background: linear-gradient(to right, #666, #333);
+            clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+       
+        .buttons-container { text-align: center; margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .action-button {
+            padding: 12px 30px;
+            background-color: rgb(122, 97, 43); 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .action-button:hover { background-color: rgb(122, 97, 43); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <div id="capture" class="id-card-container">
+        <div class="card-content">
+            <div class="logo-section">
+                <img src="{{ url_for('static', filename='TU_pic.jpeg') }}" alt="TU Logo">
+            </div>
+
+            <div class="card-title">
+                <h2>بطاقة طالب جامعي</h2>
+                <p>University Student Card</p>
+            </div>
+
+            <div class="student-info">
+                <div class="info-row">
+                    <span class="value">{{ student.name }}</span>
+                    <span class="label">الاسم / Name</span>
+                </div>
+                <div class="info-row">
+                    <span class="value">{{ student.uni_id }}</span>
+                    <span class="label">رقم الطالب / ID</span>
+                </div>
+                <div class="info-row">
+                    <span class="value">{{ student.major }}</span>
+                    <span class="label">التخصص / Specialization</span>
+                </div>
+                <div class="info-row">
+                    <span class="value">دبلوم متوسط</span>
+                    <span class="label">الدرجة / Degree</span>
+                </div>
+                
+            </div>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+
+    <div class="buttons-container">
+        <button onclick="downloadCard()" class="action-button">تحميل البطاقة (صورة)</button>
+        <a href="/" class="action-button">الرجوع للشاشة الرئيسية</a>
+    </div>
+
+    <script>
+        function downloadCard() {
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+                let link = document.createElement('a');
+                link.download = 'TU_University_Card.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+    </script>
+
+</body>
+</html>

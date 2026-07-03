@@ -1,0 +1,18 @@
+<html>
+<head> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>TU_Card</title>
+</head>
+
+<body style="background-color: white;">
+    <img src="{{ url_for('static', filename='TU_pic.jpeg') }}" alt="TU Image" style="width: 250px; height: 150px; display: block; margin-left: auto; margin-right: auto;">
+    
+    <h1 style="text-align: center; color: rgb(122, 97, 43);">مرحبا بكم في بطاقتي الجامعية</h1>
+    <h2 style="text-align: center; color: rgb(122, 97, 43);">هذا الموقع يهتم بإنشاء البطاقة الجامعيه لطلاب جامعة الطائف</h2>
+    <h2 style="text-align: center; color: rgb(122, 97, 43);">يحتوي على معلومات شخصية وهي الأسم و عمر الطالب و الرقم الجامعي و التخصص</h2>
+    
+    <div style="text-align: center;">
+        <a href="/create" class="nextpage-button">انشئ بطاقتك الجامعيه</a>
+    </div>
+</body>
+</html>

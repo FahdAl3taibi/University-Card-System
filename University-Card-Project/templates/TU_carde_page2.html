@@ -1,0 +1,28 @@
+<html>
+<head> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>create TU_Card</title>
+</head>
+<body>
+    <div class="form-container">
+        <h1 style="text-align: center; color: rgb(122, 97, 43);">أنشىء بطاقتك</h1>
+        <h2 style="text-align: center; color: rgb(122, 97, 43);">رجاء ضع معلوماتك الشخصية</h2>
+        
+        <form method="POST">
+            <label>الاسم الكامل:</label>
+            <input type="text" name="name" placeholder="أدخل اسمك" required>
+            
+            <label>العمر:</label>
+            <input type="number" name="age" placeholder="أدخل عمرك" required>
+            
+            <label>الرقم الجامعي:</label>
+            <input type="number" name="uni_id" placeholder="أدخل رقمك الجامعي" required>
+            
+            <label>التخصص:</label>
+            <input type="text" name="major" placeholder="أدخل تخصصك" required>
+            
+            <button type="submit" class="create-button">انشئ بطاقتك</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+.nextpage-button {
+    display: block;          
+    width: fit-content;      
+    margin: 20px auto;       
+    padding: 15px 30px;      
+    background-color: #7a612b; 
+    color: white;           
+    text-decoration: none;   
+    border-radius: 10px;     
+    font-weight: bold;       
+}
+
+.form-container {
+    max-width: 350px;         
+    margin: 50px auto;        
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    direction: rtl;           
+    font-family: Arial, sans-serif;
+}
+
+
+input {
+    width: 100%;
+    padding: 8px 12px;        
+    margin-bottom: 15px;      
+    border: 1px solid #ddd;
+    border-radius: 8px;       
+    font-size: 14px;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* تنسيق النصوص فوق الخانات */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+
+
+.create-button {
+    display: block;          
+    width: 100%;             
+    background-color: rgb(122, 97, 43);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;     
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
