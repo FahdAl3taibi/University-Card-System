@@ -17,7 +17,6 @@ Database: SQLite
 Frontend: HTML5, CSS3
 
 Personal Note from the Developer
-I developed this project as part of my ongoing learning journey in software development. My goal was to bridge the gap between academic requirements and real-world web applications. Creating this system helped me deepen my understanding of how backend routing interacts with frontend templates, and I am proud to showcase this as a reflection of my dedication to coding.
 
 How to Run
 Clone this repository to your local machine.
